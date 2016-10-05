@@ -15,7 +15,7 @@ controls: true
 
 --
 
-## node --inspector (node >=6.3)
+# node --inspector (node >=6.3)
 
 ```bash
 node --inspector src
@@ -28,19 +28,14 @@ To start debugging, open the following URL in Chrome:
 info: Express app started on port 3000
 ```
 
---
-
-## npm script
+# Nodemon + inspector
 
 ```bash
 npm i -D nodemon
 ```
 
-```json
-"scripts": {
-  "start": "node src",
-  "start:dev": "nodemon -- --inspect src"
-}
+```bash
+./node_modules/.bin/nodemon -- --inspect src
 ```
 
 --
@@ -49,7 +44,7 @@ npm i -D nodemon
 
 --
 
-## editorconfig
+# editorconfig
 
 ```ini
 root = true
@@ -68,11 +63,7 @@ trim_trailing_whitespace = false
 
 --
 
-![editorconfig](img/editorconfig.png "editorconfig")
-
---
-
-## eslint
+# eslint (linter)
 
 ```bash
 npm i -D eslint
@@ -80,7 +71,7 @@ npm i -D eslint
 ./node_modules/.bin/eslint --fix
 ```
 
-## .eslintignore
+# .eslintignore
 
 ```
 coverage
@@ -89,7 +80,7 @@ example.js
 
 --
 
-## package.json
+# eslintConfig (package.json)
 
 ```json
 "eslintConfig": {
@@ -110,7 +101,23 @@ example.js
 
 --
 
-## travis (CI)
+# Sublime Text + Package Control
+
+```
+Package Control: Advanced install Package
+```
+
+```
+Editor​Config SublimeLinter Sublime​Linter-contrib-eslint
+```
+
+--
+
+# test + travis (CI)
+
+```bash
+npm i -D mocha chai
+```
 
 ```yml
 language: node_js
@@ -130,16 +137,16 @@ after_success:
 
 --
 
-## coveralls y codeclimate (coverage)
+# coveralls y codeclimate (coverage)
 
-```json
-"scripts": {
-  "lint": "eslint .",
-  "pretest": "npm run lint -s",
-  "test": "istanbul cover _mocha",
-  "coveralls": "coveralls < coverage/lcov.info",
-  "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
-},
+```bash
+npm i -D istanbul coveralls codeclimate-test-reporter
+```
+
+```bash
+./node_modules/.bin/istanbul cover _mocha
+./node_modules/.bin/coveralls < coverage/lcov.info
+./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info
 ```
 
 --
@@ -152,7 +159,35 @@ after_success:
 
 --
 
-## Semantic Commit
+# Greenkeeper
+
+```bash
+npm i -g greenkeeper
+greenkeeper login
+greenkeeper web-app
+```
+
+--
+
+![greenkeeper](img/greenkeeper.png "greenkeeper")
+
+--
+
+![pullrequest](img/pullrequest.png "pullrequest")
+
+--
+
+# Snyk.io
+
+![snyk1](img/snyk1.png "snyk1")
+
+--
+
+![snyk2](img/snyk2.png "snyk2")
+
+--
+
+# Semantic Commit
 
 ```bash
 commit -m "chore(package): Actualizado moment"
@@ -166,22 +201,16 @@ commit -m "test: ensure Tayne retains clothing"
 
 --
 
-## generate-changelog
+# generate-changelog
 
-```json
-"scripts": {
-  "release:major": "changelog -M && git add CHANGELOG.md
-    && git commit -m 'updated CHANGELOG.md' && npm version major
-    && git push origin && git push origin --tags && npm publish"
-  ,
-  "release:minor": "changelog -m && git add CHANGELOG.md
-    && git commit -m 'updated CHANGELOG.md' && npm version minor
-    && git push origin && git push origin --tags && npm publish"
-  ,
-  "release:patch": "changelog -p && git add CHANGELOG.md
-    && git commit -m 'updated CHANGELOG.md' && npm version patch
-    && git push origin && git push origin --tags && npm publish"
-}
+```bash
+npm i -D generate-changelog
+```
+
+```bash
+./node_modules/.bin/changelog -M # Major
+./node_modules/.bin/changelog -m # Minor
+./node_modules/.bin/changelog -p # Patch
 ```
 
 --
@@ -192,7 +221,7 @@ commit -m "test: ensure Tayne retains clothing"
 
 --
 
-## docker-compose.yml
+# docker-compose.yml
 
 ```yml
 version: '2'
@@ -225,8 +254,6 @@ networks:
 ```
 
 --
-
-## docker-compose
 
 ```bash
 docker-compose exec mongo sh
