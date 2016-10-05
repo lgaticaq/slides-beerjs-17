@@ -7,7 +7,7 @@ author:
 output: index.html
 theme: juanbrujo/cleaver-beerjs
 style: style.css
-controls: false
+controls: true
 
 --
 
