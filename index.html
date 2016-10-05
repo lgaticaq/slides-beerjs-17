@@ -553,7 +553,7 @@ kbd {
   }
 }
 
-#slide-19 {
+#slide-23 {
   background-image: url("img/lgatica.jpg");
   background-repeat: no-repeat;
   background-position: 50% 20%;
@@ -577,7 +577,7 @@ kbd {
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-2">
         <div data-id="2" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="node-inspector-node-6-3-">node --inspector (node &gt;=6.3)</h2>
+        <section class="slide-content"><h1 id="node-inspector-node-6-3-">node --inspector (node &gt;=6.3)</h1>
 <pre><code class="lang-bash">node --inspector src
 Debugger listening on port 9229.
 Warning: This is an experimental feature and could change at any time.
@@ -586,32 +586,23 @@ To start debugging, open the following URL <span class="hljs-keyword">in</span> 
     @521e5b7e2b7cc66b4006a8a54cb9c4e57494a5ef/
     inspector.html?experiments=<span class="hljs-literal">true</span>&amp;v8only=<span class="hljs-literal">true</span>&amp;ws=localhost:9229/node
 info: Express app started on port 3000</code></pre>
+<h1 id="nodemon-inspector">Nodemon + inspector</h1>
+<pre><code class="lang-bash">npm i -D nodemon</code></pre>
+<pre><code class="lang-bash">./node_modules/.bin/nodemon -- --inspect src</code></pre>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-3">
         <div data-id="3" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="npm-script">npm script</h2>
-<pre><code class="lang-bash">npm i -D nodemon</code></pre>
-<pre><code class="lang-json">&quot;scripts&quot;: {
-  &quot;start&quot;: &quot;node src&quot;,
-  &quot;start:dev&quot;: &quot;nodemon -- --inspect src&quot;
-}</code></pre>
+        <section class="slide-content"><p><img src="img/node-inspector.png" alt="inspector" title="inspector"></p>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-4">
         <div data-id="4" class="slide-overlay"></div>
-        <section class="slide-content"><p><img src="img/node-inspector.png" alt="inspector" title="inspector"></p>
-</section>
-      </div>
-    </div>
-    <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-5">
-        <div data-id="5" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="editorconfig">editorconfig</h2>
+        <section class="slide-content"><h1 id="editorconfig">editorconfig</h1>
 <pre><code class="lang-ini"><span class="hljs-attr">root</span> = <span class="hljs-literal">true</span>
 <span class="hljs-section">
 [*]</span>
@@ -628,29 +619,22 @@ info: Express app started on port 3000</code></pre>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-6">
-        <div data-id="6" class="slide-overlay"></div>
-        <section class="slide-content"><p><img src="img/editorconfig.png" alt="editorconfig" title="editorconfig"></p>
-</section>
-      </div>
-    </div>
-    <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-7">
-        <div data-id="7" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="eslint">eslint</h2>
+      <div class="slide hidden" id="slide-5">
+        <div data-id="5" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="eslint-linter-">eslint (linter)</h1>
 <pre><code class="lang-bash">npm i -D eslint
 ./node_modules/.bin/eslint --init
 ./node_modules/.bin/eslint --fix</code></pre>
-<h2 id="-eslintignore">.eslintignore</h2>
+<h1 id="-eslintignore">.eslintignore</h1>
 <pre><code>coverage
 example.js</code></pre>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-8">
-        <div data-id="8" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="package-json">package.json</h2>
+      <div class="slide hidden" id="slide-6">
+        <div data-id="6" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="eslintconfig-package-json-">eslintConfig (package.json)</h1>
 <pre><code class="lang-json">&quot;eslintConfig&quot;: {
   &quot;env&quot;: {
     &quot;es6&quot;: true,
@@ -669,9 +653,19 @@ example.js</code></pre>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-9">
-        <div data-id="9" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="travis-ci-">travis (CI)</h2>
+      <div class="slide hidden" id="slide-7">
+        <div data-id="7" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="sublime-text-package-control">Sublime Text + Package Control</h1>
+<pre><code>Package Control: Advanced install Package</code></pre>
+<pre><code>Editor​Config SublimeLinter Sublime​Linter-contrib-eslint</code></pre>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-8">
+        <div data-id="8" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="test-travis-ci-">test + travis (CI)</h1>
+<pre><code class="lang-bash">npm i -D mocha chai</code></pre>
 <pre><code class="lang-yml"><span class="hljs-attr">language:</span> node_js
 <span class="hljs-attr">node_js:</span>
 <span class="hljs-bullet">  -</span> <span class="hljs-string">"4"</span>
@@ -686,44 +680,80 @@ example.js</code></pre>
       </div>
     </div>
     <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-9">
+        <div data-id="9" class="slide-overlay"></div>
+        <section class="slide-content"><p><img src="img/travis.png" alt="travis" title="travis"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
       <div class="slide hidden" id="slide-10">
         <div data-id="10" class="slide-overlay"></div>
-        <section class="slide-content"><p><img src="img/travis.png" alt="travis" title="travis"></p>
+        <section class="slide-content"><h1 id="coveralls-y-codeclimate-coverage-">coveralls y codeclimate (coverage)</h1>
+<pre><code class="lang-bash">npm i -D istanbul coveralls codeclimate-test-reporter</code></pre>
+<pre><code class="lang-bash">./node_modules/.bin/istanbul cover _mocha
+./node_modules/.bin/coveralls &lt; coverage/lcov.info
+./node_modules/.bin/codeclimate-test-reporter &lt; coverage/lcov.info</code></pre>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-11">
         <div data-id="11" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="coveralls-y-codeclimate-coverage-">coveralls y codeclimate (coverage)</h2>
-<pre><code class="lang-json">"scripts": {
-  "lint": "eslint .",
-  "pretest": "npm run lint -s",
-  "test": "istanbul cover _mocha",
-  "coveralls": "coveralls &lt; coverage/lcov.info",
-  "codeclimate": "codeclimate-test-reporter &lt; coverage/lcov.info"
-},</code></pre>
+        <section class="slide-content"><p><img src="img/coveralls.png" alt="coveralls" title="coveralls"></p>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-12">
         <div data-id="12" class="slide-overlay"></div>
-        <section class="slide-content"><p><img src="img/coveralls.png" alt="coveralls" title="coveralls"></p>
+        <section class="slide-content"><p><img src="img/codeclimate.png" alt="codeclimate" title="codeclimate"></p>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-13">
         <div data-id="13" class="slide-overlay"></div>
-        <section class="slide-content"><p><img src="img/codeclimate.png" alt="codeclimate" title="codeclimate"></p>
+        <section class="slide-content"><h1 id="greenkeeper">Greenkeeper</h1>
+<pre><code class="lang-bash">npm i -g greenkeeper
+greenkeeper login
+greenkeeper web-app</code></pre>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
       <div class="slide hidden" id="slide-14">
         <div data-id="14" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="semantic-commit">Semantic Commit</h2>
+        <section class="slide-content"><p><img src="img/greenkeeper.png" alt="greenkeeper" title="greenkeeper"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-15">
+        <div data-id="15" class="slide-overlay"></div>
+        <section class="slide-content"><p><img src="img/pullrequest.png" alt="pullrequest" title="pullrequest"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-16">
+        <div data-id="16" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="snyk-io">Snyk.io</h1>
+<p><img src="img/snyk1.png" alt="snyk1" title="snyk1"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-17">
+        <div data-id="17" class="slide-overlay"></div>
+        <section class="slide-content"><p><img src="img/snyk2.png" alt="snyk2" title="snyk2"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-18">
+        <div data-id="18" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="semantic-commit">Semantic Commit</h1>
 <pre><code class="lang-bash">commit -m <span class="hljs-string">"chore(package): Actualizado moment"</span>
 commit -m <span class="hljs-string">"feat(models): Se agrego metodo para filtrar por empresa"</span>
 commit -m <span class="hljs-string">"fix(login): Se corrigio asignacion de permisos"</span>
@@ -735,37 +765,28 @@ commit -m <span class="hljs-string">"test: ensure Tayne retains clothing"</span>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-15">
-        <div data-id="15" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="generate-changelog">generate-changelog</h2>
-<pre><code class="lang-json">"scripts": {
-  "release:major": "changelog -M &amp;&amp; git add CHANGELOG.md
-    &amp;&amp; git commit -m 'updated CHANGELOG.md' &amp;&amp; npm version major
-    &amp;&amp; git push origin &amp;&amp; git push origin --tags &amp;&amp; npm publish"
-  ,
-  "release:minor": "changelog -m &amp;&amp; git add CHANGELOG.md
-    &amp;&amp; git commit -m 'updated CHANGELOG.md' &amp;&amp; npm version minor
-    &amp;&amp; git push origin &amp;&amp; git push origin --tags &amp;&amp; npm publish"
-  ,
-  "release:patch": "changelog -p &amp;&amp; git add CHANGELOG.md
-    &amp;&amp; git commit -m 'updated CHANGELOG.md' &amp;&amp; npm version patch
-    &amp;&amp; git push origin &amp;&amp; git push origin --tags &amp;&amp; npm publish"
-}</code></pre>
+      <div class="slide hidden" id="slide-19">
+        <div data-id="19" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="generate-changelog">generate-changelog</h1>
+<pre><code class="lang-bash">npm i -D generate-changelog</code></pre>
+<pre><code class="lang-bash">./node_modules/.bin/changelog -M <span class="hljs-comment"># Major</span>
+./node_modules/.bin/changelog -m <span class="hljs-comment"># Minor</span>
+./node_modules/.bin/changelog -p <span class="hljs-comment"># Patch</span></code></pre>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-16">
-        <div data-id="16" class="slide-overlay"></div>
+      <div class="slide hidden" id="slide-20">
+        <div data-id="20" class="slide-overlay"></div>
         <section class="slide-content"><h2 id="changelog-md">CHANGELOG.md</h2>
 <p><img src="img/changelog.png" alt="changelog" title="changelog"></p>
 </section>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-17">
-        <div data-id="17" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="docker-compose-yml">docker-compose.yml</h2>
+      <div class="slide hidden" id="slide-21">
+        <div data-id="21" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="docker-compose-yml">docker-compose.yml</h1>
 <pre><code class="lang-yml"><span class="hljs-attr">version:</span> <span class="hljs-string">'2'</span>
 <span class="hljs-attr">services:</span>
 <span class="hljs-attr">  app:</span>
@@ -797,10 +818,9 @@ commit -m <span class="hljs-string">"test: ensure Tayne retains clothing"</span>
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden" id="slide-18">
-        <div data-id="18" class="slide-overlay"></div>
-        <section class="slide-content"><h2 id="docker-compose">docker-compose</h2>
-<pre><code class="lang-bash">docker-compose <span class="hljs-built_in">exec</span> mongo sh
+      <div class="slide hidden" id="slide-22">
+        <div data-id="22" class="slide-overlay"></div>
+        <section class="slide-content"><pre><code class="lang-bash">docker-compose <span class="hljs-built_in">exec</span> mongo sh
 apk add --no-cache mongodb-tools
 mongodump -u user -p pass -h host:port <span class="hljs-_">-d</span> dbname -o /tmp/
 mongorestore <span class="hljs-_">-d</span> visto-bueno /tmp/dbname
@@ -812,8 +832,8 @@ rm -rf /tmp/dbname
       </div>
     </div>
     <div class="slide-wrapper">
-      <div class="slide hidden author-slide" id="slide-19">
-        <div data-id="19" class="slide-overlay"></div>
+      <div class="slide hidden author-slide" id="slide-23">
+        <div data-id="23" class="slide-overlay"></div>
         <section class="slide-content"><div class="author">
   <h1 class="name">Leonardo Gatica</h1>
     <h3 class="twitter">
@@ -831,6 +851,11 @@ rm -rf /tmp/dbname
     </div>
 </div>
 
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="overview">☷</div>
+    <div class="arrow next"></div>
+  </div>
 
 
   <script type="text/javascript">
